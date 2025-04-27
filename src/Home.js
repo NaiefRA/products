@@ -53,6 +53,10 @@ const Home = () => {
       <div className="product-list">
         {data &&
           data.products.map((product, i) => {
+            const price =
+              Math.round(
+                (product.price * (100 - product.discountPercentage)) / 100
+              ) - 0.01;
             // console.log(product);
             return (
               <div className="product-container" key={i}>
@@ -64,13 +68,10 @@ const Home = () => {
                 <h2>{product.title}</h2>
                 <div className="product-desc">{product.description}</div>
                 <div className="prices">
-                  <div className="actual-price">
-                    $
-                    {Math.round(
-                      (product.price * (100 - product.discountPercentage)) / 100
-                    ) - 0.01}
-                  </div>
-                  <div className="grey-price">${product.price}</div>
+                  <div className="actual-price">${price}</div>
+                  {price === product.price ? null : (
+                    <div className="grey-price">${product.price}</div>
+                  )}
                 </div>
               </div>
             );
