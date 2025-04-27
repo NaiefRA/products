@@ -33,13 +33,13 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin: 10px;
-  transition: transform 0.65s, box-shadow 0.65s, background-color 0.65s;
+  transition: all 0.65s;
 }
 
 .product-container:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  background-color: lightgray;
+  background-color: rgb(242, 242, 242);
 }
 
 .images {
@@ -78,4 +78,31 @@ body {
   padding: 10px;
   color: rgb(97, 97, 97);
   font-family: "ProximaNovaRegular";
+}
+
+.load-button {
+  display: flex;
+  margin: 20px auto;
+  padding: 15px 30px;
+  background: black;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(56, 56, 56, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.load-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(56, 56, 56, 0.4);
+}
+
+.load-button:active {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 8px rgba(56, 56, 56, 0.5);
 }
